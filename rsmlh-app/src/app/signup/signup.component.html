@@ -1,0 +1,49 @@
+
+
+<div class="wrapper">
+    <div class="page-header" style="background-image: url('./assets/img/hosp.png');">
+        <div class="filter"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mr-auto ml-auto">
+                      <div class="card card-register">
+                          <h3 class="title">Welcome Dr. Patricia</h3>
+                          
+                          <form #loginForm="ngForm"  (ngSubmit)="loggedin(loginForm)">
+                            <div class="form-group">
+                                <label for="email">Username</label>
+                                <input
+                                  type="email"
+                                  id="email"
+                                  class="form-control"
+                                  ngModel
+                                  name="email"
+                                  required
+                            
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input
+                                  type="password"
+                                  id="password"
+                                  class="form-control"
+                                  ngModel
+                                  name="password"
+                                  required
+                                  minlength="6"
+                                />
+                              </div>
+
+                              <button class="btn btn-danger btn-block btn-round" type="submit"   [disabled]="!loginForm.valid">Log In</button>
+                          </form>
+                          
+                      </div>
+                    </div>
+                </div>
+                <div class="footer register-footer text-center">
+                    
+                </div>
+            </div>
+    </div>
+</div>

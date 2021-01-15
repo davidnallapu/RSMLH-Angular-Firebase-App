@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="1500">
+    <div class="container">
+        <div class="navbar-translate">
+        
+            <button class="navbar-toggler navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
+                <span class="navbar-toggler-bar"></span>
+                <span class="navbar-toggler-bar"></span>
+                <span class="navbar-toggler-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav ml-auto">
+                
+                
+
+                <li class="nav-item" *ngIf="!isDocumentation()">
+                    <a [routerLink]="['']" class="nav-link" ><i class="nc-icon nc-book-bookmark"></i> Our Mission</a>
+                </li>
+                
+
+                 <li class="nav-item" *ngIf="!isDocumentation()">
+                    <a [routerLink]="['/updates']" class="nav-link" ><i class="nc-icon nc-bulb-63"></i> Updates</a>
+                </li>
+
+           
+
+              
+
+
+
+                <li class="nav-item" *ngIf="!isHome()">
+                    <a [routerLink]="['/testimonies']" *ngIf="!isDocumentation()" class="nav-link"><i class="nc-icon nc-chat-33"></i>Testimonies</a>
+                    
+
+
+
+                </li>
+             
+                <li class="nav-item" *ngIf="!isDocumentation()">
+                        <a [routerLink]="['/team']" class="nav-link" ><i class="nc-icon nc-world-2"></i>Meet the Team</a>
+                    </li>
+
+                    <li class="nav-item" *ngIf="!isDocumentation()">
+                            <a [routerLink]="['/support']" class="nav-link" ><i class="nc-icon nc-world-2"></i>Support</a>
+                        </li>
+                <li class="nav-item" *ngIf="!isDocumentation()">
+                        <a class="nav-link" rel="tooltip" title="Admin Login" data-placement="bottom" [routerLink]="['/login']" >
+                            <i class="nc-icon nc-single-02"></i>
+                            <p class="d-lg-none"> Admin Login</p>
+                        </a>
+                </li>
+                <!-- <li class="nav-item" *ngIf="!isDocumentation()">
+                        <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank">
+                            <i class="fa fa-facebook-square"></i>
+                            <p class="d-lg-none">Facebook</p>
+                        </a>
+                    </li>
+                 -->
+            </ul>
+        </div>
+    </div>
+</nav>

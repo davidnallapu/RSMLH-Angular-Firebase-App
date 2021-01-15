@@ -1,0 +1,155 @@
+<div class="page-header page-header-xxs" data-parallax="true" style="background-image: url('./assets/img/hosp.png');">
+    <div class="filter"></div>
+</div>
+
+
+
+<div class="col-xs-12">
+  <h1><b>Welcome Dr.Patricia!</b></h1>
+  
+</div>
+
+<hr><br>
+<div class="nav-tabs-navigation">
+    <div class="nav-tabs-wrapper">
+        <ngb-tabset [justify]="'center'">
+
+            <ngb-tab title="See Messages">
+                <ng-template ngbTabContent >
+<div class="container" *ngFor="let item of feedbackList.reverse();">
+        <div class="row">
+                <div class="col-xs-12">
+                    <h3> 
+                        <b>{{item.name}}</b> says
+                        <br>
+                    </h3>
+
+                    <div class="col-xs-12">
+                            <h5>
+                                '{{item.message}}'
+                            </h5>
+                        </div>
+                        <div class="col-xs-12" >
+                                <h5>
+                                    Contact: {{item.email}}
+                                </h5>
+                            </div>
+                </div>
+                <hr>
+            </div> 
+</div>
+          </ng-template></ngb-tab> 
+            <ngb-tab title="Add Update">
+                <ng-template ngbTabContent >
+                  
+                    <form  [formGroup]="updateForm"  (ngSubmit)="onSubmitUpdate(updateForm.value)"  >
+                        <div class="text-center">
+                             
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                    <div class="form-group">
+                                <label>Event</label>
+                                <div class="input-group" [ngClass]="{'input-group-focus':focus===true}">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+                                    </div>
+                                    <input type="text"  placeholder="Event" (focus)="focus=true" (blur)="focus=false" 
+                                    class="form-control"
+                                    formControlName="event"
+                                    
+                                    >
+                                </div></div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                <label>Upload Image</label>
+                        
+                                    
+                                    <input type="file" class="form-control" placeholder="Image" (focus)="focus1=true" (blur)="focus1=false" 
+                                    formControlName="img"
+                                    (change)="onFileSelected($event )"
+                                   >
+                               
+                            </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                        <label>Description</label>
+                        <textarea  rows="4" placeholder="Tell us your thoughts and feelings..." formControlName="desc" class="form-control" ></textarea>    
+                    </div>
+                    <img *ngIf="selectedImage!=null" [src]="imgSrc" width="350px" height="250px"> <br><br>
+                        
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button class="btn btn-success btn-lg btn-fill" type="submit" >Submit Update</button>
+                            </div>
+                        </div>
+
+                    </form>
+                  </ng-template></ngb-tab>
+
+                  <ngb-tab title="Add Testimony">
+                      <ng-template ngbTabContent >
+                        
+                          <form  [formGroup]="testimonyForm"  (ngSubmit)="onSubmitTestimony(testimonyForm.value)"  >
+                              <div class="row">
+                                  <div class="col-md-6">
+                                          <div class="form-group">
+                                      <label>Name</label>
+                                      <div class="input-group" [ngClass]="{'input-group-focus':focus===true}">
+                                          <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+                                          </div>
+                                          <input type="text"  placeholder="Name" (focus)="focus=true" (blur)="focus=false" 
+                                          class="form-control"
+                                          formControlName="name"
+                                          >
+                                      </div></div>
+                                  </div>
+                                  
+                                  <div class="col-md-6">
+                                      <div class="form-group">
+                                           
+                                      <label>Upload Image</label>
+                                        
+                                          <input type="file" class="form-control" placeholder="Image" (focus)="focus1=true" (blur)="focus1=false" 
+                                           formControlName="img"
+                                           (change)="onFileSelected($event)"
+                                          >
+                                    
+                                  </div>
+                                  </div>
+                              </div>
+                              
+                              <div class="form-group">
+                              <label>Description</label>
+                              <textarea  rows="4" placeholder="Description" formControlName="desc" class="form-control" ></textarea>    
+                          </div>
+                     
+                                    <img *ngIf="selectedImage!=null" [src]="imgSrc" width="350px" height="250px"> <br><br>
+                   
+                         
+                              <div class="row">
+                                  <div class="col-md-12">
+                                      <button class="btn btn-success btn-lg btn-fill" type="submit" >Submit Testimony</button>
+                                  </div>
+                              </div>
+  
+                          </form>
+                        </ng-template></ngb-tab>
+
+                
+                
+                
+                </ngb-tabset>
+
+                <br><br>
+                </div></div>
+
+
+
+
+
+
